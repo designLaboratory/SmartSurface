@@ -84,6 +84,21 @@ uint8_t ReadRegisterI2C(uint8_t adres){
 	return dane;
 }
 
+void WriteRegisterI2C(uint8_t adres, uint8_t data){
+	SendModeI2C();
+	SendModeI2C();
+	MasterModeI2C();
+	SendByteI2C(0x3A);	//adres slave
+	BusyI2C();
+	SendByteI2C(adres);		
+	BusyI2C();
+	SendByteI2C(data);
+	BusyI2C();
+	SlaveModeI2C();
+	ReceiveModeI2C();
+	DisableI2C();	
+}
+
 
 
 
