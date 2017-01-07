@@ -14,4 +14,5 @@ void DisableAckI2C(void);
 uint8_t ReadByteI2C(void);
 uint8_t BusyI2C(void);
 uint8_t ReadRegisterI2C(uint8_t adres);
+void WriteRegisterI2C(uint8_t adres, uint8_t data);
 #endif
