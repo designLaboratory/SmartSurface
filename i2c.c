@@ -2,7 +2,7 @@
 uint8_t adres_ukladu=0x1D; 
 void InitI2C(void){
   SIM->SCGC5  |= SIM_SCGC5_PORTE_MASK;  // Wlaczenie zegara dla portu E
-  SIM->SCGC4  |= SIM_SCGC4_I2C0_MASK;   // Wlaczenie zegara dla modulu I2C1
+  SIM->SCGC4  |= SIM_SCGC4_I2C0_MASK;   // Wlaczenie zegara dla modulu I2C0
   
   PORTE->PCR[25] = PORT_PCR_MUX(5) |\
                   PORT_PCR_DSE_MASK;    //PTE25 (I2C1_SDA)
