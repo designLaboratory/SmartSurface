@@ -22,22 +22,18 @@ Dialog DLL:      TARMCM1.DLL V1.10.0.0
  
 <h2>Project:</h2>
 C:\Users\£ukasz\Desktop\github\smart surface\SmartSurface\trunk\SmartSurface.uvprojx
-Project File Date:  01/06/2017
+Project File Date:  01/10/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling main.c...
-main.c(24): warning:  #223-D: function "WaitForTap" declared implicitly
-  		if(WaitForTap()==1){PTB->PTOR|=LedMask[LedGreen];}
-main.c(27): warning:  #111-D: statement is unreachable
-  	return 1;
-main.c(15): warning:  #177-D: variable "pomiar" was declared but never referenced
-  	uint16_t pomiar=0;
-main.c: 3 warnings, 0 errors
+compiling MPU6050.c...
+MPU6050.c(14): warning:  #550-D: variable "Register" was set but never used
+  	uint8_t Register=0;
+MPU6050.c: 1 warning, 0 errors
 linking...
-Program Size: Code=1432 RO-data=220 RW-data=0 ZI-data=352  
-".\Objects\SmartSurface.axf" - 0 Error(s), 3 Warning(s).
+Program Size: Code=1452 RO-data=220 RW-data=0 ZI-data=352  
+".\Objects\SmartSurface.axf" - 0 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -64,9 +60,9 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:4.3.0
 
    * Component: Keil::Device:Startup:2.5.0
-      Source file:   Device\Source\ARM\startup_MKL25Z4.s
       Source file:   Device\Source\system_MKL25Z4.c
       Include file:  Device\Source\system_MKL25Z4.h
+      Source file:   Device\Source\ARM\startup_MKL25Z4.s
 Build Time Elapsed:  00:00:02
 </pre>
 </body>

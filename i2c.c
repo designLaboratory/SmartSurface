@@ -61,17 +61,17 @@ void SendByteI2C(uint8_t dane){		//wysylamy bajta
 ///  wartstwa wyzej
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-uint8_t ReadRegisterI2C(uint8_t adres){
+uint8_t ReadRegisterI2C(uint8_t reg,uint8_t adress1,uint8_t adress2){
 	uint8_t dane=0;
 	EnableI2C();
 	MasterModeI2C();
 	SendModeI2C();
-	SendByteI2C(0x3A);
+	SendByteI2C(adress1);		//default 0x3a
 	BusyI2C();
-	SendByteI2C(adres);			//rejestr ktory chcemy odczytac
+	SendByteI2C(reg);			//rejestr ktory chcemy odczytac
 	BusyI2C();
 	SendRestartI2C();
-	SendByteI2C(0x3B);
+	SendByteI2C(adress2);		//default 0x3b
 	BusyI2C();
 	ReceiveModeI2C();
 	DisableAckI2C();
@@ -84,13 +84,13 @@ uint8_t ReadRegisterI2C(uint8_t adres){
 	return dane;
 }
 
-void WriteRegisterI2C(uint8_t adres, uint8_t data){
+void WriteRegisterI2C(uint8_t reg, uint8_t data,uint8_t adress){
 	SendModeI2C();
 	SendModeI2C();
 	MasterModeI2C();
-	SendByteI2C(0x3A);	//adres slave
+	SendByteI2C(adress);	//adres slave default 0x3a
 	BusyI2C();
-	SendByteI2C(adres);		
+	SendByteI2C(reg);		
 	BusyI2C();
 	SendByteI2C(data);
 	BusyI2C();

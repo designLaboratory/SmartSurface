@@ -13,6 +13,6 @@ void ReceiveModeI2C(void);
 void DisableAckI2C(void);
 uint8_t ReadByteI2C(void);
 uint8_t BusyI2C(void);
-uint8_t ReadRegisterI2C(uint8_t adres);
-void WriteRegisterI2C(uint8_t adres, uint8_t data);
+uint8_t ReadRegisterI2C(uint8_t reg,uint8_t adress1,uint8_t adress2);
+void WriteRegisterI2C(uint8_t reg, uint8_t data,uint8_t adress);
 #endif

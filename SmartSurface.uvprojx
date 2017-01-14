@@ -132,12 +132,12 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <Capability>1</Capability>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -393,6 +393,21 @@
               <FileName>i2c.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\i2c.c</FilePath>
+            </File>
+            <File>
+              <FileName>tap.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\tap.c</FilePath>
+            </File>
+            <File>
+              <FileName>tap.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\tap.h</FilePath>
+            </File>
+            <File>
+              <FileName>MPU6050.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MPU6050.c</FilePath>
             </File>
           </Files>
         </Group>
