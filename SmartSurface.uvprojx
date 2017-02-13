@@ -395,19 +395,29 @@
               <FilePath>.\i2c.c</FilePath>
             </File>
             <File>
-              <FileName>tap.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\tap.c</FilePath>
-            </File>
-            <File>
-              <FileName>tap.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\tap.h</FilePath>
-            </File>
-            <File>
               <FileName>MPU6050.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\MPU6050.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>uart.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\uart.h</FilePath>
+            </File>
+            <File>
+              <FileName>pit.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pit.c</FilePath>
+            </File>
+            <File>
+              <FileName>pit.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\pit.h</FilePath>
             </File>
           </Files>
         </Group>

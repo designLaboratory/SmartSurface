@@ -4,7 +4,7 @@
 #ifndef MPU6050_h
 #define MPU6050_h
 
-#define MPU_adress  (0x68)		//everything is 8 bit data
+#define MPU_adress  (0xD0)		//everything is 8 bit data
 #define ACCEL_X_H   (0x3B)
 #define ACCEL_X_L   (0x3C)
 #define ACCEL_Y_H		(0x3D)
@@ -15,8 +15,9 @@
 #define TEMP_L 			(0x42)
 #define ACCEL_CONF  (0x1C)
 
-
+void MpuInit(void);
 void SetRangeAccel(uint8_t range);
 uint16_t ReadAxisAccel(uint8_t axis);
-uint16_t ReadTemperature(void);
+float ReadTemperature(void);
+void MotionInit(void);
 #endif

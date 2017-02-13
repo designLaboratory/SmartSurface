@@ -6,4 +6,4 @@
 .\objects\i2c.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h
 .\objects\i2c.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h
 .\objects\i2c.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h
-.\objects\i2c.o: C:\Users\Łukasz\Desktop\github\smart surface\SmartSurface\trunk\RTE\Device\MKL25Z128xxx4\system_MKL25Z4.h
+.\objects\i2c.o: C:\Users\Łukasz\Desktop\smartsurface kopia\trunk\RTE\Device\MKL25Z128xxx4\system_MKL25Z4.h
