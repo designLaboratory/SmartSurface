@@ -72,7 +72,7 @@ int main(void){
 	pitInit();
 	
 	
-	SendString("dupa");
+	SendString("MPU6050");
 
 	while(1) {
 		//pomiar=ReadAxisAccel(1);  //z axis
