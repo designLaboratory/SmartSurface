@@ -1,19 +1,25 @@
+////////////////////////////////////////////////////////////////////////////
+//SmartSurface - device which can detect small acceleration               // 
+// and recognise type of taps. In this project we can recognice two fast  //
+// taps an two slow taps. When devive detect only one tap, after 5 seconds//
+// timers will restart.																										//
+////////////////////////////////////////////////////////////////////////////
+//Lukasz Motyka, Filip Hepko, Systemy Mikroprocesorowe 2////////////////////
+
+//In this version we use uart to send data, but it is not necessary/////////
+
 #include "MKL25z4.h"
 #include "i2c.h"
 #include "uart.h"
 #include "MPU6050.h"
 #include "pit.h"
 
-
 #define PORTC_IRQn 
 #define BUSCLOCK 24000000UL
 #define LedRed 0
 #define LedGreen 1
 const uint32_t LedMask[]={(1UL<<18),(1UL<<19),(1UL<<8)};
-////////////////////////////////////////////////////////////////////////
-//its simple example how to use transission i2c with accerometer on kl25z board
-//we are reading only 1 axis and only accelometer
-//////////////////////////////////////////////////////////////////////////////
+
 void Wait(uint32_t value);
 void ledInit(void);
 void InitInput(void);
@@ -30,7 +36,6 @@ void Recognise(uint32_t value){
 void code(void){
 	char znak[16]="                ";
 		if(PORTA->ISFR & (1UL<<1)){
-			//PTB->PTOR|=LedMask[LedGreen];
 			if(timer_on==0){
 				PIT->CHANNEL[0].TCTRL |= PIT_TCTRL_TEN_MASK;
 				timer_on++;
@@ -59,9 +64,9 @@ void PORTA_IRQHandler(void){
 
 
 int main(void){
-	uint16_t pomiar=0;
-	float temp=0;
-	char znak[16]="                ";
+	//uint16_t pomiar=0;
+	//float temp=0;
+	//char znak[16]="                ";
 	ledInit();
 	InitI2C();
 	uart_init();
@@ -70,13 +75,12 @@ int main(void){
 	MotionInit();
 	InitInput();
 	pitInit();
-	
-	
 	SendString("MPU6050");
 
 	while(1) {
+		__wfi();
 		//pomiar=ReadAxisAccel(1);  //z axis
-		//sprintf(znak, "%d",timer_value);
+		//sprintf(znak, "%d",pomiar);
 		//SendString(znak);
 		//SendString("\n\r");
 		//Wait(1000000);

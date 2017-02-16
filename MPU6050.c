@@ -2,7 +2,6 @@
 #include "i2c.h"
 
 void MpuInit(void){
-	//WriteRegisterI2C(0x1C,0x00,MPU_adress);			//accelerometer +-8g
 	WriteRegisterI2C(0x1B,0x00,MPU_adress);			
 	WriteRegisterI2C(0x19,15,MPU_adress);				//sample sets 1khz
 	WriteRegisterI2C(0x6B,0x00,MPU_adress);			//wake up accel :)
@@ -45,7 +44,7 @@ void MotionInit(void){
 	WriteRegisterI2C(0x1C,0x01,MPU_adress);			//5hz hpf
 	WriteRegisterI2C(0x1F,1,MPU_adress);
 	WriteRegisterI2C(0x20,20,MPU_adress);			//20 ms trwanie 
-	WriteRegisterI2C(0x69,0x15,MPU_adress);			//5hz hpf  0b00010101
-	WriteRegisterI2C(0x38,0x40,MPU_adress);			//5hz hpf
+	WriteRegisterI2C(0x69,0x15,MPU_adress);			//  0b00010101
+	WriteRegisterI2C(0x38,0x40,MPU_adress);		
 }
 

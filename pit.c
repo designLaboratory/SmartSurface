@@ -12,9 +12,6 @@ uint32_t timer_value=0;
 //inicjalizacja zegara pit
 ////////////////////////////////////////////////////////
 void pitInit(void){
-
-	
-	
 	SIM->SCGC6|=SIM_SCGC6_PIT_MASK;		//podlaczenie zegara
 	PIT->MCR &= ~PIT_MCR_MDIS_MASK;      //wlaczenie modulu
 	PIT->MCR |= PIT_MCR_FRZ_MASK;			//zamrozenie timerow w debug mode
@@ -29,8 +26,6 @@ void pitInit(void){
 	NVIC_ClearPendingIRQ(PIT_IRQn); 
 	NVIC_EnableIRQ(PIT_IRQn);
 	__enable_irq();											//globalne przerwania
-	//PIT->CHANNEL[0].TCTRL|=PIT_TCTRL_TEN_MASK;    //wlacznei timera
-	//PIT->CHANNEL[1].TCTRL|=PIT_TCTRL_TEN_MASK;    //wlacznei timera
 	PIT->MCR = 0x00;							//wlaczenie pit
 }
 

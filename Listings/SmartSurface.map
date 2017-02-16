@@ -442,9 +442,9 @@ Image Symbol Table
     i.code                                   0x000009f0   Section        0  main.o(i.code)
     i.ledInit                                0x00000ac0   Section        0  main.o(i.ledInit)
     i.main                                   0x00000b20   Section        0  main.o(i.main)
-    i.pitInit                                0x00000b74   Section        0  pit.o(i.pitInit)
-    i.uart_init                              0x00000c10   Section        0  uart.o(i.uart_init)
-    .constdata                               0x00000c94   Section       12  main.o(.constdata)
+    i.pitInit                                0x00000b58   Section        0  pit.o(i.pitInit)
+    i.uart_init                              0x00000bf4   Section        0  uart.o(i.uart_init)
+    .constdata                               0x00000c78   Section       12  main.o(.constdata)
     .data                                    0x1ffff000   Section       16  pit.o(.data)
     .bss                                     0x1ffff010   Section       96  libspace.o(.bss)
     HEAP                                     0x1ffff070   Section        0  startup_mkl25z4.o(HEAP)
@@ -624,12 +624,12 @@ Image Symbol Table
     WriteRegisterI2C                         0x000009ab   Thumb Code    70  i2c.o(i.WriteRegisterI2C)
     code                                     0x000009f1   Thumb Code   142  main.o(i.code)
     ledInit                                  0x00000ac1   Thumb Code    80  main.o(i.ledInit)
-    main                                     0x00000b21   Thumb Code    58  main.o(i.main)
-    pitInit                                  0x00000b75   Thumb Code   136  pit.o(i.pitInit)
-    uart_init                                0x00000c11   Thumb Code   118  uart.o(i.uart_init)
-    LedMask                                  0x00000c94   Data          12  main.o(.constdata)
-    Region$$Table$$Base                      0x00000ca0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x00000cc0   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x00000b21   Thumb Code    46  main.o(i.main)
+    pitInit                                  0x00000b59   Thumb Code   136  pit.o(i.pitInit)
+    uart_init                                0x00000bf5   Thumb Code   118  uart.o(i.uart_init)
+    LedMask                                  0x00000c78   Data          12  main.o(.constdata)
+    Region$$Table$$Base                      0x00000c84   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00000ca4   Number         0  anon$$obj.o(Region$$Table)
     starting_value                           0x1ffff000   Data           4  pit.o(.data)
     value100ms                               0x1ffff004   Data           4  pit.o(.data)
     timer_on                                 0x1ffff008   Data           1  pit.o(.data)
@@ -645,9 +645,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000175
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x00000cd0, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00000cb4, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000cc0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x00000ca4, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -750,11 +750,11 @@ Memory Map of the image
     0x000009aa   0x00000046   Code   RO          124    i.WriteRegisterI2C  i2c.o
     0x000009f0   0x000000d0   Code   RO            9    i.code              main.o
     0x00000ac0   0x00000060   Code   RO           10    i.ledInit           main.o
-    0x00000b20   0x00000054   Code   RO           11    i.main              main.o
-    0x00000b74   0x0000009c   Code   RO          302    i.pitInit           pit.o
-    0x00000c10   0x00000084   Code   RO          269    i.uart_init         uart.o
-    0x00000c94   0x0000000c   Data   RO           12    .constdata          main.o
-    0x00000ca0   0x00000020   Data   RO          609    Region$$Table       anon$$obj.o
+    0x00000b20   0x00000038   Code   RO           11    i.main              main.o
+    0x00000b58   0x0000009c   Code   RO          302    i.pitInit           pit.o
+    0x00000bf4   0x00000084   Code   RO          269    i.uart_init         uart.o
+    0x00000c78   0x0000000c   Data   RO           12    .constdata          main.o
+    0x00000c84   0x00000020   Data   RO          609    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x1ffff000, Size: 0x00000010, Max: 0xffffffff, ABSOLUTE)
@@ -780,16 +780,16 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       316         60          0          0          0     215870   i2c.o
-       732        168         12          0          0     226889   main.o
-       164          0          0          0          0       1335   mpu6050.o
-       412         64          0         16          0       8764   pit.o
-        80         44        192          0        256        876   startup_mkl25z4.o
-       312         46          0          0          0        577   system_mkl25z4.o
-       176         20          0          0          0        877   uart.o
+       316         60          0          0          0     216054   i2c.o
+       704        152         12          0          0     226961   main.o
+       164          0          0          0          0       1383   mpu6050.o
+       412         64          0         16          0       8840   pit.o
+        80         44        192          0        256        908   startup_mkl25z4.o
+       312         46          0          0          0        593   system_mkl25z4.o
+       176         20          0          0          0        905   uart.o
 
     ----------------------------------------------------------------------
-      2196        402        236         16        256     455188   Object Totals
+      2168        386        236         16        256     455644   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          0          0          0   (incl. Padding)
 
@@ -848,15 +848,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      3028        446        236         16        352     454676   Grand Totals
-      3028        446        236         16        352     454676   ELF Image Totals
-      3028        446        236         16          0          0   ROM Totals
+      3000        430        236         16        352     455132   Grand Totals
+      3000        430        236         16        352     455132   ELF Image Totals
+      3000        430        236         16          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 3264 (   3.19kB)
+    Total RO  Size (Code + RO Data)                 3236 (   3.16kB)
     Total RW  Size (RW Data + ZI Data)               368 (   0.36kB)
-    Total ROM Size (Code + RO Data + RW Data)       3280 (   3.20kB)
+    Total ROM Size (Code + RO Data + RW Data)       3252 (   3.18kB)
 
 ==============================================================================
 
